@@ -3,3 +3,13 @@ node_modules
 playwright-report
 test-results
 *.json
+
+
+SDET_PW/tests/**
+!SDET_PW/tests/acres.spec.ts
+!SDET_PW/tests/acresDD.spec.ts
+!SDET_PW/tests/datadriven.spec.ts
+!SDET_PW/tests/POM1.spec.ts
+!SDET_PW/tests/.spec.ts
+
+

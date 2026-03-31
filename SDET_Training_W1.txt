@@ -1,0 +1,354 @@
+DAY 1
+
+	+Agile
+		-Terminologies
+		-Values
+		-Principles
+	+Scrum
+		- is a Time-boxed event, i.e., has a specific time period.
+		-Scrum
+			-Time-boxed iterative for completion of set of tasks (1-4 weeks).
+		-Roles
+			+Prod. Owner
+			+Scrum Master
+			+Dev. Team
+		-Documentations
+			+Product Backlog
+			+Sprint Backlog
+			+Impediment Backlog
+		-Reviews
+			+Scrum Review
+			+Scrum Retrospective
+		-Points
+			+Planning poker(Fibonacci)
+			+Story Points
+	+Kanban - Visualization Board with diff. states
+	+Jira
+	+Testing Fundamentals
+		-Functional And Non Functional
+			+Black-box
+				-Equivalence partition
+				-BVA
+				-State Transition Testing
+				-Decision Table Testing
+
+			+White box
+				-Statement coverage: Every line of code runs at least once.
+				-Branch coverage: All decision paths (e.g., true/false conditions) are tested.
+				-Path coverage: Every possible route through the code is checked.
+			+Gray Box
+DAY 2
+
+
+			+Regression Testing- Testing for new bugs in new iteration after a change in code, especially after adding a new feature.
+
+			+Retesting -  verifying that specific defects identified in earlier test cycles have been fixed
+
+			+Smoke Testing
+				-Build Verification Testing or Confidence Testing, is a preliminary software testing process used to determine whether a 				software build is stable enough for further testing
+				-Build Version No - v.2.26.8.76
+						 - v. Major_release. Minor_release. Revision_release/Path_release. Built_Release
+			+Sanity Testing
+				-performed to quickly verify that specific functionalities of a software build are working as expected after minor changes, 				bug fixes, or updates.
+			+
+			VERIFICATION	|	VALIDATION
+			Requirements	|	Acceptance Testing
+			Design		|	System Testing
+			Arch. Design	|	Integration Testing
+			Modular Design	|	Unit Testing
+					|
+	    			     Coding
+
+	
+
+
+	+STLC
+		Req. Analysis ->
+		Test Planning ->
+		Test Case Dev. ->
+		Test Env. Setup ->
+		Test Exec. ->
+		Test Closure
+
+	+Error, Bug, Failure
+		-Error found by tester is defect
+		-Defect accepted by dev. team is called bug
+		-Build doesn't mean the req., then it is bug
+	
+	+Test Case Template
+		Test Case Id | Test Scenario | Precondition | Test Condition | Test Case Steps | Test Data | Expected Results | Actual Result Iteration 1 | 		Status Iteration 1
+
+	+Test Scenario
+		Test Case id | Test Scenario Desc. | Type of Testing  | No. of Test Cases | Test Case Details
+	+Defect Report
+		Defect Id | Module Name | Defect Summary | Defect Priority | Assigned to | Status
+		States
+			Open,Assigned, Deferred, Rejected, Fixed, Reopened, Closed
+
+	Project - 99acres.com
+
+
+DAY 3 - JS & TS
+	
+	Dynamically Typed		|		TS is a syntactic superset of JS enabling static typing
+	Scripting Language		|		TS is Object Oriented Programming Language
+	Doesn't Support interfaces	|		support interfaces
+	Doesn't support REST parameters	|		Support REST parameters
+	Doesn't support modules		|		Supports modules
+
+	npm install --save-dev typescript
+	npm install -g typescript
+	npm install -g tsx
+
+
+	| Feature            | `var`   	| `let`   | `const` |
+	| ------------------ | -------- | ------  | ------- |
+	| Scope              | Function | Block   | Block   |
+	| Reassignment       | ✅ Yes 	| ✅ Yes  | ❌ No  |
+	| Redeclaration      | ✅ Yes	| ❌ No   | ❌ No  |
+	| Hoisting           | ✅ Yes  	| ⚠️ TDZ  | ⚠️ TDZ |
+	| Initialization req | ❌ No   	| ❌ No   | ✅ Yes |
+
+	methods
+		console.log
+		typeof
+	primitive datatypes
+		string
+		number
+		boolean
+		null
+		undefined
+	
+	logical comparison operatives
+		&& || !
+
+
+DAY 4- PlayWright
+	
+	+open-source, enables end-to-end as well as cross-browser testing for web applications
+	+CLI commands
+		-npx playwright test
+		-npx playwright test <testfilename>					=> run all tests from the folder 
+		-npx playwright test <testfilename> --headed				=> run specific testfile
+		-npx playwright test <testfilename> --ui				=> run in interactive UI mode
+		-npx playwright test <testfilename> --project <browsername> --headed	=> run in headed browser
+		-npx playwright test <testfilename> --workers 1				=> disable parallel exec.
+		-npx playwright test <testfilename> --debug				=> execute using PW inspector
+		-npx playwright codegen							=> record and generate scripts using PW inspector
+
+	+Locators
+		-used to identify web elements 
+		-Types
+			+page.getByRole() 
+				- await page.getByRole('button', {name:'Login'}).click;
+			+page.getByText()
+				- await page.getByText('UST Global').toBeVisible;
+			+page.getByLabel()
+				- await page.getByLabel('Username').fill("admin_user");
+			+page.getByPlaceholder()
+				- await page.getByPlaceholder('username', ).fill("customer_user");
+			+page.getByAltText()
+				- await page.getByAltText('ust_image').click;
+			+page.getByTitle()
+				- await page.getByTitle('User count').toBeVisible;
+			+page.getByTestId()
+				- await page.getByTestId('button'}).click;
+	+Assertions
+		-Types
+			Hard - if one assertion fails then the subsequent assertions will fail
+			Soft
+		-Auto-retrying
+			await expect(locator).toBeAttached()
+			await expect(locator).toBeChecked()
+			await expect(locator).toBeDisabled()
+			await expect(locator).toBeEditable()
+			await expect(locator).toBeEnabled()
+			await expect(locator).toBeEmpty()
+			await expect(locator).toBeFocused()
+		-Non-retrying
+			await expect(locator).toBe()
+			await expect(locator).toBeCloseTo()
+			await expect(locator).toBeDefined()
+			await expect(locator).toBeFalsy()
+			await expect(locator).toBeGreaterThan()
+			await expect(locator).toBeGreaterThanOrEqualTo()
+			await expect(locator).toBeInstanceOf()
+		-Soft
+			await expect.soft(locator).toHaveText(value)
+			await expect.soft(locator).toBeVisible()
+
+		-Custom Expect Message
+			expect.configure
+			expect.poll
+			expect.toPass
+		- XPath - XML Path
+			Types
+				Absolute
+				Relative
+			To make XPath dynamic
+				XPath Methods
+					text() - //div[text()= "Google offered in"]	
+					contains() - //div [contains(@class, "jhfak")]
+					starts-with() - //div[starts-with(@role,"navig")]
+					ends-with() - //div[ends-with(@role, "ation")]
+					using more than 1 method - //div[contains(text(), "Google offered in")]
+					logical Operator - AND, OR
+						//input[contains(@class = "RNmpc") AND (@type= "submit")]
+				XPath Axis
+					Ancestor - //a[@class="efk"]/ancestor::div
+					Descendent - //a[@class="efk"]/descendent:: input
+					Parent - //a[@class="efk"]/parent:: input
+					Child - //a[@class="efk"]/child:: input
+					Sibling - //a[@class="efk"]/sibling::center
+						//a[@class="efk"]/following-sibling::
+						//a[@class="efk"]/descending-sibling::
+					Following - //a[@class="efk"]/following::
+					Preceding - //a[@class="efk"]/preceding::
+					Following-preceding
+					following-descending
+
+				Using both 
+					//div[@class="efk"]/child::center/child::input[contains(@class'fjbdk')]
+		-Selecting values for dropdowns
+			+for dropdowns made using <select>
+				- await page.locator("#Skills).selectOptions("Java");
+				- await page.locator("#Skills).selectOptions({label:"Java"});
+				- await page.locator("#Skills).selectOptions({index:3});
+
+			+for dropdowns made using <div>
+				- await page.locator("msdd").click();
+				- await page.locator(".corner-all").locator('a', {hasText : "English"}).click();
+
+Asynchronous nature and promise handling in PW
+	-JS is asynchronous and non-blocking in nature
+	-So when we write any automation code,  we get errors as JS will try to run in parallel instead of running sequentially 
+	
+	- Promise
+		- foundation of asynch. functions
+		- object returned by asynch. fn.
+		- operation is often completed when promise is  returned to caller
+		- outcomes
+			+ resolve
+			+reject
+
+Mouse Events
+	- click()
+	- dblclick()
+	- click({button:'right'})
+	- click({modifiers : ['shift']})
+	- hover()
+	- click({position : {x:offset,y:offset}})
+	- sourceLocator.dragTo(targetLocator)
+
+Keyboard Events
+	- fill()
+	- pressSequentially(text, delay)
+	- press(key)
+	- keyboard.type(text)
+	- 
+
+
+
+
+POM (Playwright Object Model)
+	- design framework to improve maintainability of automation tools
+	- enhance reusability of code
+	- helps to organize test scripts in a more structured way by separating the page elements and their interactions from test logic.
+	- Benefits
+		+ Maintainability
+		+ Reusability 
+		+ Readability
+	- Annotations
+		test.beforeEach()
+		test.beforeAll()
+		test.afterEach()
+		test.afterAll()
+		test.fail()
+		test.skip()
+		test.fixme()
+		test.only()
+		test.describe() - used to group tests together
+		
+DDD - Data-Driven Development
+
+TDD - Test Driven Development
+	- Write and execute test cases
+	- Check whether the functionality of code is worlig based on the req. provided by client
+ATDD(BDD) - Acceptance Test Driven Development
+	- aka BDD - Behavior Driven Development
+	- used to check the scenario of an application
+	- it will check how app. works in real-time
+
+
+Gherkin
+	- to bring req. in short and simple language, we use User-stories
+	- gherkin is simple English language to describe BDD framework
+	- User stories is converted to Gherkin files
+	- Req. -> US -> Gherkin
+
+	- gherkin provides step-by-step execution of a task for the following scenario
+	- we are expected to use the keywords provided by gherkin language, as it is still a requirement doc.
+	- it is case-sensitive
+	- keywords
+		+ Feature		- providing feature or module name
+		+ Background		- combination of steps, which executes before each scenario
+		+ Scenario		- task you are going to perform (Scenario = Test Case)
+		+ Scenario Outline	- used to run the scenario with multiple data
+		+ Given			- precondition step (pre-requisite)
+		+ When			- the task you want to perform steps
+		+ Then			- outcomes step
+		+ And			- continuation of given, then step
+		+ But			- negative step
+		+ Example		- it stores the data for the execution in Scenario Outline
+	- extension - .feature
+	- aka feature file
+
+	-Example of a Gherkin File
+		Feature: Login Functionality
+		Scenario: Login with valid credentials
+		Given user is on login page
+		When User enters username
+		And User enters password
+		And User clicks Login button
+		Then User is logged in successfully
+		And User is able to navigate to product page
+	-frameworks
+		java - Cucumber
+		.net - Specsflow
+		python - PyBehave / Behave
+		JS/TS - Cucumber.js
+
+	
+	-Steps to integrate BDD with playwright
+		1- npm init playwright@latest
+		2- npm i -D @playwright/test playwright-bdd
+		3- cucumber extension in vsc
+		4- configure BDD(runner) in playwright.config.ts
+
+			import {defineBdd} from 'playwright/bdd'
+			
+			defineBddConfig({
+				feature: 'tests/features/**/*.feature',
+				steps: ['tests/steps/**/*.ts],
+				outputDir: '.tests'
+			});
+
+		5- update package.json	
+			{
+				"scripts":{
+						"bdd:gen": "bddgen",
+						"test": "playwright test",
+						"bdd": "npm run bdd:gen && npm run test"
+				}
+			}
+		6- Write feature file
+		7- Run "npm run bdd"
+
+
+Accessibility Testing
+	- Make the site more accessible for people with disabilities
+	- adhere to WCAG - Web Content Accessibility Guidelines
+	- includes correct colors, alt texts, captions, CAPTCHA, etc
+	-Tools
+		+ axe devtools
+		+ NVDA

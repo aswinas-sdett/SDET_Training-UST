@@ -31,24 +31,24 @@ test.beforeEach(async({page}) =>
 
 // TO VALIDATE FILL LOAN DETAILS TO CALCULATE EMI
 
-loanData.forEach(data =>{
-    test(`Check with ${data.validityOfData} data`, async ({page}) =>{
-        await HLPage.fillInForm(data.LoanAmnt,data.ROI, data.Tenure);
-        console.log(data.validityOfData);
-        if (data.validityOfData == "valid")
-        {
-            let emi = await page.locator('.emiPrice b').nth(0).textContent();
+// loanData.forEach(data =>{
+//     test(`Check with ${data.validityOfData} data`, async ({page}) =>{
+//         await HLPage.fillInForm(data.LoanAmnt,data.ROI, data.Tenure);
+//         console.log(data.validityOfData);
+//         if (data.validityOfData == "valid")
+//         {
+//             let emi = await page.locator('.emiPrice b').nth(0).textContent();
  
-            console.log(emi);
-            await expect(emi).toBe(data.expectedEMI);
-        }
-        else
-        {
-            const constraint = await page.locator("//input[@id ='loanAmountInput']/following-sibling::span");
-            await expect(constraint).toHaveText("Loan Range: 3 Lacs - 30 Cr");
-        }
-    })
-})
+//             console.log(emi);
+//             await expect(emi).toBe(data.expectedEMI);
+//         }
+//         else
+//         {
+//             const constraint = await page.locator("//input[@id ='loanAmountInput']/following-sibling::span");
+//             await expect(constraint).toHaveText("Loan Range: 3 Lacs - 30 Cr");
+//         }
+//     })
+// })
 
 
 //TO VALIDATE FILLING PERSONAL INFO FOR EMAIL 

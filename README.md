@@ -6,6 +6,7 @@ The page selected is Home loan page of 99acres.com - https://www.99acres.com/app
 
 N.B. -The site has aggressive security measures which leads to site access denial after few attempts at testing
 
+```
 File Structure
 |- 99ACRES_BDD - Implementation of test cases with BDD on 99acres.com
 |
@@ -22,3 +23,5 @@ File Structure
 |- 99acres.xlsx - Manual Test cases
 |
 |- SDET_Training_W1.txt - Notes taken during class
+
+```

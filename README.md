@@ -20,3 +20,5 @@ File Structure
 |- SDET_TS - Typescript task questions and answers
 |
 |- 99acres.xlsx - Manual Test cases
+|
+|- SDET_Training_W1.txt - Notes taken during class
